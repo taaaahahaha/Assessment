@@ -15,6 +15,6 @@ member3@xyz.com - 1234 (member)
 
 admin1@xyz.com - 1234 (admin)
 
-### Superuser account to see registered Models
+## Superuser account to see registered Models
 
 admin - admin (superuser)
