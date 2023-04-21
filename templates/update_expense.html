@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+      Home  
+{% endblock title %}
+
+{% block body %}
+        
+
+   
+
+    <div class="container my-3">
+        <h2>Update your Expense</h2>
+        <form action='/update/{{object.id}}' method="POST">
+            
+            
+            <label for="name" class="form-label">Name</label>
+            <input type="text" placeholder="Name the Expense" class="form-control" value="{{object.name}}"  name="name" id="name" aria-describedby="emailHelp">
+            
+            <label for="description" class="form-label">Description</label>
+            <input type="text" placeholder="Describe the Expense" class="form-control" value="{{object.description}}"  name="description" id="description" aria-describedby="emailHelp">
+            
+            <label for="category" class="form-label">Select Category:</label>
+            <select name="category" id="category"  value="{{object.category}}" class="form-control" aria-describedby="emailHelp">
+                <option value="Health">Health</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Travel">Travel</option>
+                <option value="Education">Education</option>
+                <option value="Books">Books</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="date_of_expense" class="form-label">Date of Expense:</label>
+            <input type="date"  value="{{date}}" id="date_of_expense" name="date_of_expense" class="form-control" aria-describedby="emailHelp">
+            
+            <label for="amount" class="form-label">Amount:</label>
+            <input type="number"  value="{{object.amount}}" id="amount" name="amount" min="0" class="form-control" aria-describedby="emailHelp">
+            
+            <button type="submit" class="btn btn-dark">Update</button>
+        </form>
+    </div>
+    
+    
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+
+
+    {% endblock body %}
